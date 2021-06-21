@@ -45,13 +45,14 @@ def publish():
 
 
 root = Tk()
+root.configure(background='black')
 root.attributes('-fullscreen', True)
 w, h = root.winfo_screenwidth(), root.winfo_screenheight()
 df = ('Arial', 15)
 bf = ('Arial', 60, 'bold')
 
 root.title(name)
-f_name = Frame(root)
+'''f_name = Frame(root)
 
 l_name = Label(f_name, text='이름')
 l_name.pack(side='left')
@@ -65,12 +66,9 @@ t_topic = Text(f_name, height=1, width=20)
 t_topic.insert(1.1, topic)
 t_topic.pack(side='left')
 
-f_name.pack()
+f_name.pack()'''
 
-lb_msg = Listbox(root, font=bf, width=43)
+lb_msg = Listbox(root, font=bf, width=43, background='black', foreground='gray', borderwidth=0, highlightthickness=0)
 lb_msg.pack()
-
-b_pub = Button(root, text='지우기', width=10, command=publish)
-b_pub.pack()
 
 root.mainloop()
